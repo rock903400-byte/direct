@@ -1,5 +1,0 @@
-__pycache__/
-.streamlit/
-*.xlsx
-*.csv
-.DS_Store
