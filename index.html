@@ -3,81 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>功能入口網 - LINE 驗證</title>
+    <title>儲互社督導管理入口網</title>
     <!-- 引入 Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入 Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-light">
 
-    <div class="container h-100 d-flex flex-column justify-content-center align-items-center min-vh-100">
+    <!-- 頂部導覽列 -->
+    <nav class="navbar navbar-dark bg-navy shadow-sm mb-4">
+        <div class="container justify-content-center">
+            <span class="navbar-brand mb-0 h1 fw-bold">
+                <i class="bi bi-shield-lock me-2"></i> 儲互社管理入口網
+            </span>
+        </div>
+    </nav>
+
+    <div class="container h-100 d-flex flex-column justify-content-center align-items-center mb-5">
         
-        <!-- 載入中畫面 -->
-        <div id="loading" class="text-center">
-            <div class="spinner-border text-success" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <p class="mt-2 text-secondary">正在連接 LINE...</p>
-        </div>
-
-        <!-- 登入閘道 (未登入時顯示) -->
-        <div id="login-section" class="card shadow-sm p-4 text-center d-none" style="max-width: 400px; width: 100%;">
-            <h2 class="mb-4 fw-bold">歡迎使用</h2>
-            <p class="text-muted mb-4">請先透過 LINE 驗證您的身分以進入系統</p>
-            <button id="btn-login" class="btn btn-success btn-lg w-100 py-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="24" class="me-2">
-                使用 LINE 登入
-            </button>
-        </div>
-
-        <!-- 功能選單 (登入後顯示) -->
-        <div id="content-section" class="w-100 d-none" style="max-width: 600px;">
-            <div class="card shadow-sm p-4 mb-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img id="user-avatar" src="" alt="Avatar" class="rounded-circle me-3 border" width="60" height="60">
-                    <div>
-                        <h4 class="mb-0">您好，<span id="user-name">訪客</span></h4>
-                        <small class="text-muted">已通過 LINE 認證</small>
-                    </div>
+        <!-- 主要卡片容器 -->
+        <div id="content-section" class="w-100" style="max-width: 600px;">
+            <div class="card shadow-lg p-4 border-0 rounded-4">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-dark mb-1">功能目錄</h2>
+                    <p class="text-secondary small">請選擇下方功能進入對應系統</p>
                 </div>
-
-                <hr>
 
                 <div class="row g-3">
                     <!-- 功能 1 -->
                     <div class="col-12">
-                        <a href="https://8asdxeziyl2ozfrmkpzof3.streamlit.app/" target="_blank" class="btn btn-outline-primary btn-lg w-100 text-start d-flex justify-content-between align-items-center py-3">
-                            <span>🚀 儲互社決策中心</span>
-                            <i class="bi bi-chevron-right"></i>
+                        <a href="https://8asdxeziyl2ozfrmkpzof3.streamlit.app/" target="_blank" class="btn btn-list-item w-100 text-start d-flex justify-content-between align-items-center py-3 px-4">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-box bg-blue-soft text-primary me-3">
+                                    <i class="bi bi-bar-chart-line fs-4"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold fs-5">儲互社決策中心</div>
+                                    <small class="text-muted">數據分析與經營決策支援</small>
+                                </div>
+                            </div>
+                            <i class="bi bi-arrow-right-short fs-3 text-secondary"></i>
                         </a>
                     </div>
+                    
                     <!-- 功能 2 -->
                     <div class="col-12">
-                        <a href="https://cub-mobile-assistant.web.app/" target="_blank" class="btn btn-outline-primary btn-lg w-100 text-start d-flex justify-content-between align-items-center py-3">
-                            <span>⚖️ 法規</span>
-                            <i class="bi bi-chevron-right"></i>
+                        <a href="https://cub-mobile-assistant.web.app/" target="_blank" class="btn btn-list-item w-100 text-start d-flex justify-content-between align-items-center py-3 px-4">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-box bg-gold-soft text-warning me-3">
+                                    <i class="bi bi-journal-text fs-4"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold fs-5">法規查詢</div>
+                                    <small class="text-muted">相關法規與行政命令檢索</small>
+                                </div>
+                            </div>
+                            <i class="bi bi-arrow-right-short fs-3 text-secondary"></i>
                         </a>
                     </div>
+
                     <!-- 功能 3 -->
                     <div class="col-12">
-                        <a href="https://culroc-line.rock903400.workers.dev/?id=6666" target="_blank" class="btn btn-outline-primary btn-lg w-100 text-start d-flex justify-content-between align-items-center py-3">
-                            <span>📱 儲互社行動秘書</span>
-                            <i class="bi bi-chevron-right"></i>
+                        <a href="https://culroc-line.rock903400.workers.dev/?id=6666" target="_blank" class="btn btn-list-item w-100 text-start d-flex justify-content-between align-items-center py-3 px-4">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-box bg-green-soft text-success me-3">
+                                    <i class="bi bi-phone-vibrate fs-4"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold fs-5">儲互社行動秘書</div>
+                                    <small class="text-muted">行動化行政作業輔助系統</small>
+                                </div>
+                            </div>
+                            <i class="bi bi-arrow-right-short fs-3 text-secondary"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="mt-5 text-center">
-                    <button id="btn-logout" class="btn btn-link text-danger">登出 LINE 帳號</button>
+                <div class="mt-4 pt-3 border-top text-center">
+                    <p class="text-muted small mb-0">© 2024 中華民國儲蓄互助協會 版權所有</p>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- 引入 LIFF SDK -->
-    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <!-- 引入自定義腳本 -->
+    <!-- 腳本保持留空 -->
     <script src="app.js"></script>
 </body>
 </html>
