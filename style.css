@@ -4,6 +4,7 @@
     --soft-blue: #e8eaf6;
     --soft-gold: #fffde7;
     --soft-green: #e8f5e9;
+    --soft-purple: #f3e5f5;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
 .bg-blue-soft { background-color: var(--soft-blue); }
 .bg-gold-soft { background-color: var(--soft-gold); }
 .bg-green-soft { background-color: var(--soft-green); }
+.bg-purple-soft { background-color: var(--soft-purple); }
 
 .card {
     border: none;
